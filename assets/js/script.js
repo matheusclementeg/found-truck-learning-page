@@ -1,5 +1,5 @@
-(function( $ ) {
-
+$(document).ready(function() {
+    // -- SLIDER --
     //Function to animate slider captions 
 	function doAnimations( elems ) {
 		//Cache the animationend event in a variable
@@ -27,15 +27,16 @@
 	//Pause carousel  
 	$myCarousel.carousel('pause');
 	
-	
 	//Other slides to be animated on carousel slide event 
 	$myCarousel.on('slide.bs.carousel', function (e) {
 		var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
 		doAnimations($animatingElems);
 	});  
+	
     $('#carousel-example-generic').carousel({
         interval:3000,
         pause: "false"
     });
-	
-})(jQuery);	
+    // -- SLIDER END --
+
+});

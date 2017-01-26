@@ -167,3 +167,6 @@ i.icon.ion-android-walk {
   font-size:60px;
 }
 
+.navbar-brand > img {
+  margin-top: -10px;
+}
