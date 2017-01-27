@@ -9,9 +9,14 @@ class Partner {
 
 	}
   
-    public function create(){
+    public function create($owner,$company,$email,$city,$state){
         $partner = new \App\Models\Partner;
         // --- Partner setters
+        $partner->owner = $owner;
+        $partner->company = $company;
+        $partner->email = $email;
+        $partner->city = $city;
+        $partner->state = $state;
         $partner->save();
     }
 

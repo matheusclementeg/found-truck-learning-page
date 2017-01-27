@@ -24,7 +24,13 @@ class Partner extends Controller {
             $partner   = $request->all();
             if(!empty($partner)){
                 // --- Data treatment
-		        $this->partnerService->create();
+                $owner = $partner['owner'];
+                $company  = $partner['company'];
+                $email    = $partner['email'];
+                $city     = $partner['city'];
+                $state    = $partner['state'];
+
+		        $this->partnerService->create($owner,$company,$email,$city,$state);
                 $responseContent['error']   = false;
     	        $responseContent['message'] = 'partner has been saved';
         	} else{

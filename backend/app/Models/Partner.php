@@ -15,6 +15,6 @@ class Partner extends Eloquent
 	protected $collection = 'partner';
 	protected $connection = 'mongodb';
 
-	protected $fillable = [''];
+	protected $fillable = ['owner','company','email','city','state'];
 	
 }

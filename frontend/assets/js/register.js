@@ -10,7 +10,7 @@ function registerPartner() {
 
 		$.ajax({
 	    	type: "POST",
-		    url: '../backend/partner.php',
+		    url: '../backend/public/index.php/partner/create',
 		    data: registerData,
 		    success: function(data){
 		        alert('Obrigado por entrar em contato! Em breve enviaremos um email de retorno :)');
