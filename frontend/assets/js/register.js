@@ -13,7 +13,7 @@ function registerPartner() {
 		    url: '../backend/partner.php',
 		    data: registerData,
 		    success: function(data){
-		        alert('Obrigado por entrar em contato! Em breve enviaremos um email de retorno :)');
+		        swal('Obrigado por entrar em contato! Em breve enviaremos um email de retorno :)');
 		        window.location = 'index.html';
 		    }
 		});
@@ -22,19 +22,19 @@ function registerPartner() {
 
 var _validateForm = function() {
 	if (isEmpty(document.forms[0].owner.value)) {
-		alert('Preencha o nome');
+		swal('Preencha o nome');
 		return false;
 	} else if (isEmpty(document.forms[0].company.value)) {
-		alert('Preencha a empresa');
+		swal('Preencha a empresa');
 		return false;
 	} else if (isEmpty(document.forms[0].email.value)) {
-		alert('Preencha o email');
+		swal('Preencha o email');
 		return false;
 	} else if (isEmpty(document.forms[0].city.value)) {
-		alert('Preencha a cidade');
+		swal('Preencha a cidade');
 		return false;
 	} else if (isEmpty(document.forms[0].state.value)) {
-		alert('Preencha o estado');
+		swal('Preencha o estado');
 		return false;
 	}
 
