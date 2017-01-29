@@ -13,8 +13,15 @@ function registerPartner() {
 		    url: '../backend/public/index.php/partner/create',
 		    data: registerData,
 		    success: function(data){
-		        swal('Obrigado por entrar em contato! Em breve enviaremos um email de retorno :)');
-		        window.location = 'index.html';
+		        swal({
+						title: "Obrigado por entrar em contato!",
+						text: "Em breve enviaremos um email de retorno :)",
+						type: "success"
+					},
+					function() {
+						location.href = 'index.html';
+					}
+				);
 		    }
 		});
 	}
