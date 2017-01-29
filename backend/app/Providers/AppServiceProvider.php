@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use App\Http\Services\Partner;
+use App\Http\Services\Mail;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -34,6 +35,11 @@ class AppServiceProvider extends ServiceProvider {
 		$this->app->singleton('App\Http\Services\Partner', function($app)
 		{
     		return new Partner();
+		});
+
+		$this->app->singleton('App\Http\Services\Mail', function($app)
+		{
+    		return new Mail();
 		});
 
 	}

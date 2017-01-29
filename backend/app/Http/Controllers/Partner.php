@@ -8,13 +8,16 @@ use Illuminate\Http\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Services\Partner as PartnerService;
+use App\Http\Services\Mail    as MailService;
 
 class Partner extends Controller {	
 	
     protected $partnerService;
+    protected $mailService;
 
-	public function __construct(PartnerService $partnerService){
+	public function __construct(PartnerService $partnerService, MailService $mailService){
 		$this->partnerService = $partnerService;
+        $this->mailService    = $mailService;
 	}
     
     public function create(Request $request){
@@ -31,6 +34,11 @@ class Partner extends Controller {
                 $state    = $partner['state'];
 
 		        $this->partnerService->create($owner,$company,$email,$city,$state);
+                try {
+                    $this->mailService->partnerRegister($email,$company);
+                }catch(\Exception $e){
+                    var_dump($e->getMessage());
+                }   
                 $responseContent['error']   = false;
     	        $responseContent['message'] = 'partner has been saved';
         	} else{

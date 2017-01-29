@@ -6,7 +6,7 @@ function registerPartner() {
 		registerData.company = document.forms[0].company.value;
 		registerData.email = document.forms[0].email.value;
 		registerData.city = document.forms[0].city.value;
-		registerData.state = document.forms[0].owner.value;
+		registerData.state = document.forms[0].state.value;
 
 		$.ajax({
 	    	type: "POST",
