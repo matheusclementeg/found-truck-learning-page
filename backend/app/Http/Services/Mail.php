@@ -31,8 +31,9 @@ class Mail {
 
 	public function partnerRegister($partnerMail, $partnerCompany){
 		// --- Send a message to found truck accounts 
-		$messageText = 'A empresa ' . $partnerCompany . ' deseja saber mais sobre o projeto. Email: ' . $partnerMail;
-		$toList      = array('contatofoundtruck@gmail.com');
+		$messageText = $this->buildEmailLayout();
+		// $toList      = array('contatofoundtruck@gmail.com');
+		$toList      = array('baldilp@gmail.com');
 		$from 		 = 'contatofoundtruck@gmail.com';
 		$subject  	 = 'Novo Parceiro';
 		$this->send($messageText, $toList, $from, $subject);
@@ -74,31 +75,57 @@ class Mail {
 		<!DOCTYPE html>
 		<html>
 		<head>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+			<title></title>
+			<img id="logo" src="http://i.imgur.com/xmF7E8Z.png"></head>
+
 			<style>
-				* {
-					font-family: "Source Sans Pro";
+				img {
+					/*margin-left: 25%;*/
+					width: 50%;
 				}
-				.container {
-					width: 100%;
+				#fundo {
+					background-color: #404040;
+					/*margin-left: 25%;*/
+					width: 50%;
 					text-align: center;
+					font-family: Helvetica;
+					padding: 40px;
+					color: white;
+				}
+				a {
+					background-color: #FFA500; /* Orange */
+				    border: none;
+				    border-radius: 5px;
+				    color: white;
+				    padding: 15px 32px;
+				    text-align: center;
+				    text-decoration: none;
+				    display: inline-block;
+				    font-size: 16px;
+				    font-family: Helvetica;
+				    /*margin-left: 42%;*/
+				    margin-top: 3%;
 				}
 			</style>
-		</head>
 		<body>
-			<div class="container">
-				<div class="header">
-					<img src="http://i.imgur.com/uKjRhLs.png">
-				</div>
-				<div class="content">
-					<div class="main-message">
-						<h2>Agradecemos pelo desejo de fazer parte da FoundTruck!</h2>
-						<h5>Em breve entraremos em contato :)</h5>
-					</div>
-				</div>
-				<footer>
-					Foundtruck - 2017
-				</footer>
+			<div style="text-align: center">
+				<table id="fundo">
+					<tr>
+						<th>
+							Bem-Vindo!
+							<br>
+							<br>
+							<br></th>
+					</tr>
+					<tr>
+						<td>
+							Agradecemos pelo desejo de fazer parte da FoundTruck!
+							<br>
+							<br></td>
+					</tr>
+					<td>Em breve entraremos em contato. :)</td>
+				</table>
+				<a href="http://foundtruck.com.br/blog">Conheça nosso Blog!</a>
 			</div>
 		</body>
 		</html>';

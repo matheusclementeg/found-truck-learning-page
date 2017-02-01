@@ -1,7 +1,8 @@
 function registerPartner() {
 	var registerData = {};
 
-	if (_validateForm()) {
+	// if (_validateForm()) {
+		if (true) {
 		registerData.owner = document.forms[0].owner.value;
 		registerData.company = document.forms[0].company.value;
 		registerData.email = document.forms[0].email.value;
@@ -19,7 +20,7 @@ function registerPartner() {
 						type: "success"
 					},
 					function() {
-						location.href = 'index.html';
+						// location.href = 'index.html';
 					}
 				);
 		    }
